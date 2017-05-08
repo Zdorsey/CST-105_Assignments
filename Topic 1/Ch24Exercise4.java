@@ -32,25 +32,25 @@ public class Exercise4<E> {
 		public static void main(String[] args) {
 			java.util.ArrayList<Integer> primeList = new java.util.ArrayList<>();
 			Exercise4<Integer> myStack = new Exercise4<Integer>();
-			
-			int num = 3;
-			int count = 0;
-			
-			while (num < 50) {
+			//creating integers for my while loop
+			int number = 3;
+			int times = 0;
+			// a while loop to check for prime numbers and then stores them in the stack
+			while (number < 50) {
 				boolean isPrime = true;
-				for (int divisor = 1; divisor < num; divisor++) {
-					while (divisor!=1 && num%divisor==0) {
+				for (int divisor = 1; divisor < number; divisor++) {
+					while (divisor!=1 && number%divisor==0) {
 						isPrime = false;
 						break;
 					}
 				}
 				if(isPrime) {
-					myStack.push(num);
-					count++;
+					myStack.push(number);
+					times++;
 				}
-				
-				num++;
+				number++;
 			}
+			// another while loop that prints the last item added to the stack
 			while (myStack.getSize() > 0) {
 				System.out.println(myStack.pop());
 			}
